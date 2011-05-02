@@ -1,0 +1,35 @@
+pop-linker
+==========
+
+Registration middleware to link two or more already running job managers by
+retrieving their search nodes and exchanging the respective accesspoints.
+
+All the job managers provided by the access strings on the command line are
+registered to all others.
+
+
+Usage
+-----
+
+	pop-link access-string access-string [access-string ...]
+
+access-string: a job manager accesspoint in the form of
+socket://xxx.xxx.xxx.xxx:1234
+
+
+Installation
+------------
+
+Untar the distribution archive, cd-into it and run make, sudo make install:
+
+	$ tar -xzf pop-linker_0.1b.tar.gz
+	$ cd linker
+	$ POPCBASE=/path/to/popc/sources/dir make
+	$ sudo make install
+
+
+Requirements
+------------
+
+This utility depends only on the POP-C++ sources and the POP-C++ requirements
+for compilation. Afterwards it is completely stand alone.
