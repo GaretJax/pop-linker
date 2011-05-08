@@ -1,5 +1,5 @@
 # Adjust this path to point to the sources of your popc installation
-POPCBASE?=
+POPCBASE?=/usr/local/popc
 PREFIX?=/usr/local/bin
 
 TAR=pop-linker_0.1b
@@ -20,8 +20,14 @@ install: pop-link
 	mv pop-link $(PREFIX)/pop-link
 
 $(TAR).tar.gz: main.cc LICENSE README Makefile
-	cd .. ; tar -czf $(TAR).tar.gz $$(basename $(abspath .))
-	mv ../$(TAR).tar.gz .
+	rm -rf linker
+	mkdir linker
+	cp main.cc linker
+	cp LICENSE linker
+	cp README linker
+	cp Makefile linker
+	tar -czf $(TAR).tar.gz linker
+	rm -rf linker
 
 dist: $(TAR).tar.gz
 
