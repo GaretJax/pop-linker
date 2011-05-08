@@ -1,8 +1,7 @@
 # Adjust this path to point to the sources of your popc installation
-POPCBASE?=contrib
 PREFIX?=/usr/local/bin
 
-TAR=pop-linker_0.1b
+TAR=pop-linker_0.2b
 EXEC=pop-link
 
 .PHONY: clean install all
@@ -10,7 +9,7 @@ EXEC=pop-link
 all: pop-link
 
 pop-link: main.cc
-	popcc -I$(POPCBASE) -I$(POPCBASE)/lib -I$(POPCBASE)/include -o $(EXEC) main.cc \
+	popcc -Icontrib -o $(EXEC) main.cc \
 	contrib/jobmgr.ph \
 	contrib/jobmgr.cc \
 	contrib/paroc_service_base.ph \

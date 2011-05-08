@@ -11,7 +11,7 @@
  *
  */
 
-#import "jobmgr.ph"
+#include "jobmgr.ph"
 
 #define USAGE "Usage: %s access-string access-string [access-string ...]\n"
 
